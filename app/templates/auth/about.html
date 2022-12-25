@@ -1,0 +1,914 @@
+﻿{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Booking System - Home{% endblock %}
+
+{% block page_content %}
+
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Doclik Doctors directory and Book HTML Template</title>
+<!-- Stylesheets -->
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<!-- Responsive File -->
+<link href="assets/css/responsive.css" rel="stylesheet">
+<!-- Color File -->
+<link href="assets/css/color.css" rel="stylesheet">
+
+
+
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+<link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+    <!-- Main Header -->
+    <header class="main-header header-style-one">
+
+        <!-- Header Upper -->
+        <div class="header-upper">
+            <div class="auto-container">
+                <div class="inner-container">
+                    <!--Logo-->
+                    <div class="logo-box">
+                        <div class="logo"><a href="index.html"><img src="assets/images/logo.png" alt=""></a></div>
+                    </div>
+                    <div class="right-column">
+                        <!--Nav Box-->
+                        <div class="nav-outer">
+                            <!--Mobile Navigation Toggler-->
+                            <div class="mobile-nav-toggler"><img src="assets/images/icons/icon-bar-2.png" alt=""></div>
+
+                            <!-- Main Menu -->
+                            <nav class="main-menu navbar-expand-md navbar-light">
+                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation">
+                                        <li class="dropdown"><a href="index.html">Home</a>
+                                            <ul>
+                                                <li><a href="index.html">Home One</a></li>
+                                                <li><a href="index-2.html">Home Two</a></li>
+                                                <li><a href="index-3.html">Home Three</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Doctors</a>
+                                            <ul>
+                                                <li><a href="doctors-1.html">Doctors Grid 01</a></li>
+                                                <li><a href="doctors-3.html">Doctors Grid 02</a></li>
+                                                <li><a href="doctors-2.html">Doctors List 01</a></li>
+                                                <li><a href="doctors-4.html">Doctors List 02</a></li>
+                                                <li><a href="doctor-details.html">Doctor Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Pages</a>
+                                            <ul>
+                                                <li><a href="about.html">About Us</a></li>
+                                                <li><a href="service.html">Services</a></li>
+                                                <li><a href="faq.html">FAQ’s</a></li>
+                                                <li><a href="404.html">404</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Hospitals</a>
+                                            <ul>
+                                                <li><a href="hospital-1.html">Hospital Grid</a></li>
+                                                <li><a href="hospital-2.html">Hospital List</a></li>
+                                                <li><a href="hospital-details.html">Hospital Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Blog</a>
+                                            <ul>
+                                                <li><a href="blog.html">Blog</a></li>
+                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="navbar-right-info">
+                            <div class="search-toggler"><i class="icon-search"></i></div>
+                            <div class="link-btn"><a href="#" class="theme-btn"><span><i>+</i> Join Now</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Header Upper-->
+
+        <!-- Sticky Header  -->
+        <div class="sticky-header">
+            <div class="header-upper">
+                <div class="auto-container">
+                    <div class="inner-container">
+                        <!--Logo-->
+                        <div class="logo-box">
+                            <div class="logo"><a href="index.html"><img src="assets/images/logo.png" alt=""></a></div>
+                        </div>
+                        <div class="right-column">
+                            <!--Nav Box-->
+                            <div class="nav-outer">
+                                <!--Mobile Navigation Toggler-->
+                                <div class="mobile-nav-toggler"><img src="assets/images/icons/icon-bar-2.png" alt=""></div>
+    
+                                <!-- Main Menu -->
+                                <nav class="main-menu navbar-expand-md navbar-light">
+                                    
+                                </nav>
+                            </div>
+                            <div class="navbar-right-info">
+                                <div class="search-toggler"><i class="icon-search"></i></div>
+                                <div class="link-btn"><a href="#" class="theme-btn"><span><i>+</i> Join Now</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Sticky Menu -->
+
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><span class="icon icon_close_alt2"></span></div>
+            
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="index.html"><img src="assets/images/logo.png" alt="" title=""></a></div>
+                <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+				<!--Social Links-->
+				<div class="social-links">
+					<ul class="clearfix">
+						<li><a href="#"><span class="fab fa-twitter"></span></a></li>
+						<li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+						<li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+						<li><a href="#"><span class="fab fa-instagram"></span></a></li>
+						<li><a href="#"><span class="fab fa-youtube"></span></a></li>
+					</ul>
+                </div>
+            </nav>
+        </div><!-- End Mobile Menu -->
+
+        <div class="nav-overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div>
+    </header>
+    <!-- End Main Header -->
+    
+    <!--Search Popup-->
+    <div id="search-popup" class="search-popup">
+        <div class="close-search"><span class="icon_close_alt2"></span></div>
+        <div class="popup-inner">
+            <div class="overlay-layer"></div>
+            <div class="search-form">
+                <form method="post" action="index.html">
+                    <div class="form-group">
+                        <fieldset>
+                            <input type="search" class="form-control" name="search-input" value="" placeholder="Search Here" required >
+                            <input type="submit" value="Search Now!" class="theme-btn">
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Title -->
+    <section class="page-title" style="background-image: url(assets/images/background/bg-2.png);">
+        <div class="auto-container">
+            <div class="content-box">
+                <div class="content-wrapper">
+                    <div class="title">
+                        <h1>About Us</h1>
+                    </div>
+                    <ul class="bread-crumb">
+                        <li><a href="index.html">Homepage</a></li>
+                        <li>About Us</li>
+                    </ul>
+                </div>                    
+            </div>
+        </div>
+    </section>
+
+    <!-- Servcies section -->
+    <section class="services-section">
+        <div class="shape-one"><img src="assets/images/shape/shape-1.png" alt=""></div>
+        <div class="auto-container">
+            <div class="sec-title text-center">
+                <div class="sec-logo"><img src="assets/images/resource/logo-icon.png" alt=""></div>
+                <div class="sub-title">Universal Medical Directory Services</div>
+                <h2>A Comprehensive Directory <br> For Your Health Care</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 service-block">
+                    <div class="inner-box">
+                        <div class="shape">
+                            <svg 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="162px" height="162px">
+                           <path fill-rule="evenodd"  fill="rgb(233, 245, 250)"
+                            d="M51.907,4.025 C4.744,-12.017 -4.034,30.812 3.061,42.932 C13.643,61.007 32.866,50.344 47.072,67.720 C53.996,76.190 53.497,84.812 59.956,103.148 C63.142,112.195 72.317,125.968 88.600,128.832 C107.082,132.083 115.911,127.220 127.941,135.094 C142.748,144.787 134.937,160.333 142.655,161.040 C148.709,161.596 161.984,153.268 161.302,139.151 C161.105,135.085 165.023,118.834 139.180,100.625 C129.617,93.888 111.663,92.827 102.735,85.214 C86.062,70.995 86.544,57.694 80.574,41.376 C73.423,21.829 69.404,9.976 51.907,4.025 Z"/>
+                           </svg>
+                        </div>
+                        <div class="icon"><i class="icon-hospital"></i></div>
+                        <h5>Clinic Or Hospital</h5>
+                        <h4>Book Appointment <br> With a Hospital</h4>
+                        <div class="link-icon">
+                            <a href="hospital-details.html" class="link"><i class="icon-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>                
+                <div class="col-lg-3 col-md-6 service-block">
+                    <div class="inner-box">
+                        <div class="shape">
+                            <svg 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="162px" height="162px">
+                           <path fill-rule="evenodd"  fill="rgb(233, 245, 250)"
+                            d="M51.907,4.025 C4.744,-12.017 -4.034,30.812 3.061,42.932 C13.643,61.007 32.866,50.344 47.072,67.720 C53.996,76.190 53.497,84.812 59.956,103.148 C63.142,112.195 72.317,125.968 88.600,128.832 C107.082,132.083 115.911,127.220 127.941,135.094 C142.748,144.787 134.937,160.333 142.655,161.040 C148.709,161.596 161.984,153.268 161.302,139.151 C161.105,135.085 165.023,118.834 139.180,100.625 C129.617,93.888 111.663,92.827 102.735,85.214 C86.062,70.995 86.544,57.694 80.574,41.376 C73.423,21.829 69.404,9.976 51.907,4.025 Z"/>
+                           </svg>
+                        </div>
+                        <div class="icon"><i class="icon-doctor"></i></div>
+                        <h5>Get Appointment</h5>
+                        <h4>Book Appointment <br> With a Doctor</h4>
+                        <div class="link-icon">
+                            <a href="contact.html" class="link"><i class="icon-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 service-block">
+                    <div class="inner-box">
+                        <div class="shape">
+                            <svg 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="162px" height="162px">
+                           <path fill-rule="evenodd"  fill="rgb(233, 245, 250)"
+                            d="M51.907,4.025 C4.744,-12.017 -4.034,30.812 3.061,42.932 C13.643,61.007 32.866,50.344 47.072,67.720 C53.996,76.190 53.497,84.812 59.956,103.148 C63.142,112.195 72.317,125.968 88.600,128.832 C107.082,132.083 115.911,127.220 127.941,135.094 C142.748,144.787 134.937,160.333 142.655,161.040 C148.709,161.596 161.984,153.268 161.302,139.151 C161.105,135.085 165.023,118.834 139.180,100.625 C129.617,93.888 111.663,92.827 102.735,85.214 C86.062,70.995 86.544,57.694 80.574,41.376 C73.423,21.829 69.404,9.976 51.907,4.025 Z"/>
+                           </svg>
+                        </div>
+                        <div class="icon"><i class="icon-phone"></i></div>
+                        <h5>Talk To Specialist</h5>
+                        <h4>Live Chat With <br> Certified Doctors</h4>
+                        <div class="link-icon">
+                            <a href="hospital-details.html" class="link"><i class="icon-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 service-block">
+                    <div class="inner-box">
+                        <div class="shape">
+                            <svg 
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="162px" height="162px">
+                           <path fill-rule="evenodd"  fill="rgb(233, 245, 250)"
+                            d="M51.907,4.025 C4.744,-12.017 -4.034,30.812 3.061,42.932 C13.643,61.007 32.866,50.344 47.072,67.720 C53.996,76.190 53.497,84.812 59.956,103.148 C63.142,112.195 72.317,125.968 88.600,128.832 C107.082,132.083 115.911,127.220 127.941,135.094 C142.748,144.787 134.937,160.333 142.655,161.040 C148.709,161.596 161.984,153.268 161.302,139.151 C161.105,135.085 165.023,118.834 139.180,100.625 C129.617,93.888 111.663,92.827 102.735,85.214 C86.062,70.995 86.544,57.694 80.574,41.376 C73.423,21.829 69.404,9.976 51.907,4.025 Z"/>
+                           </svg>
+                        </div>
+                        <div class="icon"><i class="icon-hospital"></i></div>
+                        <h5>Need Any Help?</h5> 
+                        <h4>Get Quick 24/7 <br>  Help And Support</h4>
+                        <div class="link-icon">
+                            <a href="" class="link"><i class="icon-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section pt-0">
+        <div class="shape-two"><img src="assets/images/shape/shape-10.png" alt=""></div>
+        <div class="shape-three"><img src="assets/images/shape/shape-11.png" alt=""></div>
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="image-wrapper">
+                        <div class="shape-one"><img src="assets/images/shape/shape-9.png" alt=""></div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="image"><img src="assets/images/resource/image-1.jpg" alt=""></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="image"><img src="assets/images/resource/image-2.jpg" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="facts-block">
+                        <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <div class="content">
+                                <div class="count-outer count-box">
+                                    <span class="count-text" data-speed="3000" data-stop="4.5">0</span><span>K</span>
+                                </div>
+                                <div class="text">Directory Listings <br> And Growing ...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="sec-title">
+                        <div class="sub-title">Medical Directory Services</div>
+                        <h2>Best Caring Facilities <br> For Everyone - At Doclik <br> You’ll Find Any Doctor</h2>
+                    </div>
+                    <div class="row">   
+                        <div class="col-md-6">
+                            <ul class="list">
+                                <li>Maintain your growth</li>
+                                <li>Growing listings of clinics</li>
+                                <li>Healthcare at your finger tips</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list">
+                                <li>Free medicine delivery</li>
+                                <li>Enjoy many discounts in fees</li>
+                                <li>Information for any disease</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="link-btn"><a href="#" class="theme-btn"><span> How We Help <i class="icon-arrow-right"></i></span></a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Working Process section -->
+    <section class="working-process-section">
+        <div class="sec-bg" style="background-image: url(assets/images/background/bg-1.png)"></div>
+        <div class="auto-container">
+            <div class="sec-title text-center light">
+                <div class="sec-logo"><img src="assets/images/resource/logo-icon.png" alt=""></div>
+                <div class="sub-title">Universal Medical Directory Services</div>
+                <h2>How Doclik Appointment Works</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 process-block">
+                    <div class="inner-box">
+                        <div class="count">01</div>
+                        <div class="image"><img src="assets/images/resource/image-1.png" alt=""></div>
+                        <div class="lik-btn"><a href="#" class="link"><i class="icon-arrow-right"></i></a></div>
+                        <div class="text">Find The Best  Doctor <br> Hospital or Clinic</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 process-block">
+                    <div class="inner-box">
+                        <div class="count">02</div>
+                        <div class="image"><img src="assets/images/resource/image-2.png" alt=""></div>
+                        <div class="lik-btn"><a href="#" class="link"><i class="icon-arrow-right"></i></a></div>
+                        <div class="text">View Full Profile And <br> Schedule Appointment</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 process-block">
+                    <div class="inner-box">
+                        <div class="count">03</div>
+                        <div class="image"><img src="assets/images/resource/image-3.png" alt=""></div>
+                        <div class="lik-btn"><a href="#" class="link"><i class="icon-arrow-right"></i></a></div>
+                        <div class="text">Get Your Checked-Up <br> And Stay Healthy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Download -->
+    <section class="app-download-section">
+        <div class="side-image"><img src="assets/images/resource/image-7.png" alt=""></div>
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="image"><img src="assets/images/resource/image-8.png" alt=""></div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="sec-title mb-30">
+                        <div class="sub-title">Download Our Smartphone App</div>
+                        <h2>Get Quick Search Options <br>  And Appointments</h2>
+                        <div class="text mb-50">Mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim <br> veniam quis nostrud exercitation ullamco laboris nisiut aliquip.</div>
+                    </div>
+                    <div class="link-btn">
+                        <a href="#" class="theme-btn-two">
+                            <i class="icon-playstore"></i>
+                            <span>Available On</span>
+                            <strong>Google Play</strong>
+                        </a>
+                        <a href="#" class="theme-btn-three">
+                            <i class="icon-apple-store"></i>
+                            <span>Available On</span>
+                            <strong>App Store</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section pt-0">
+        <div class="shape-one"><img src="assets/images/shape/shape-6.png" alt=""></div>
+        <div class="auto-container">
+            <div class="sec-title text-center">
+                <div class="sec-logo"><img src="assets/images/resource/logo-icon.png" alt=""></div>
+                <div class="sub-title">Universal Medical Directory Services</div>
+                <h2>What People Are Saying</h2>
+            </div>
+            <div class="row">
+                <div class="theme_carousel owl-theme owl-carousel" data-options='{"loop": true, "margin": 40, "autoheight":true, "lazyload":true, "nav": true, "dots": true, "autoplay": true, "autoplayTimeout": 6000, "smartSpeed": 1000, "responsive":{ "0" :{ "items": "1" }, "600" :{ "items" : "1" }, "768" :{ "items" : "1" } , "992":{ "items" : "2" }, "1200":{ "items" : "2" }}}'>
+                    <div class="col-lg-12 testimonial-block">
+                        <div class="inner-box">
+                            <div class="shape">
+                                <svg 
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="162px" height="162px">
+                               <path fill-rule="evenodd"  fill="rgb(233, 245, 250)"
+                                d="M51.907,4.025 C4.744,-12.017 -4.034,30.812 3.061,42.932 C13.643,61.007 32.866,50.344 47.072,67.720 C53.996,76.190 53.497,84.812 59.956,103.148 C63.142,112.195 72.317,125.968 88.600,128.832 C107.082,132.083 115.911,127.220 127.941,135.094 C142.748,144.787 134.937,160.333 142.655,161.040 C148.709,161.596 161.984,153.268 161.302,139.151 C161.105,135.085 165.023,118.834 139.180,100.625 C129.617,93.888 111.663,92.827 102.735,85.214 C86.062,70.995 86.544,57.694 80.574,41.376 C73.423,21.829 69.404,9.976 51.907,4.025 Z"/>
+                               </svg>
+                            </div>
+                            <div class="author-info">
+                                <div class="thumb"><img src="assets/images/resource/author-1.jpg" alt=""></div>
+                                <h4>James Thomas</h4>
+                                <div class="location">California, USA</div>
+                            </div>
+                            <div class="content">
+                                <div class="rating-info">
+                                    <h5>Best Medical Directory</h5>
+                                    <div class="rating">
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                    </div>
+                                </div>
+                                <div class="text">Dolor sitam consectetur sed adipisc  eiusmod tempor cididunt laboret do magn aliquat enim sed.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 testimonial-block">
+                        <div class="inner-box">
+                            <div class="shape">
+                                <svg 
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="162px" height="162px">
+                               <path fill-rule="evenodd"  fill="rgb(233, 245, 250)"
+                                d="M51.907,4.025 C4.744,-12.017 -4.034,30.812 3.061,42.932 C13.643,61.007 32.866,50.344 47.072,67.720 C53.996,76.190 53.497,84.812 59.956,103.148 C63.142,112.195 72.317,125.968 88.600,128.832 C107.082,132.083 115.911,127.220 127.941,135.094 C142.748,144.787 134.937,160.333 142.655,161.040 C148.709,161.596 161.984,153.268 161.302,139.151 C161.105,135.085 165.023,118.834 139.180,100.625 C129.617,93.888 111.663,92.827 102.735,85.214 C86.062,70.995 86.544,57.694 80.574,41.376 C73.423,21.829 69.404,9.976 51.907,4.025 Z"/>
+                               </svg>
+                            </div>
+                            <div class="author-info">
+                                <div class="thumb"><img src="assets/images/resource/author-2.jpg" alt=""></div>
+                                <h4>Tanya Benson</h4>
+                                <div class="location">California, USA</div>
+                            </div>
+                            <div class="content">
+                                <div class="rating-info">
+                                    <h5>Best Medical Directory</h5>
+                                    <div class="rating">
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                    </div>
+                                </div>
+                                <div class="text">Dolor sitam consectetur sed adipisc  eiusmod tempor cididunt laboret do magn aliquat enim sed.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 testimonial-block">
+                        <div class="inner-box">
+                            <div class="shape">
+                                <svg 
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="162px" height="162px">
+                               <path fill-rule="evenodd"  fill="rgb(233, 245, 250)"
+                                d="M51.907,4.025 C4.744,-12.017 -4.034,30.812 3.061,42.932 C13.643,61.007 32.866,50.344 47.072,67.720 C53.996,76.190 53.497,84.812 59.956,103.148 C63.142,112.195 72.317,125.968 88.600,128.832 C107.082,132.083 115.911,127.220 127.941,135.094 C142.748,144.787 134.937,160.333 142.655,161.040 C148.709,161.596 161.984,153.268 161.302,139.151 C161.105,135.085 165.023,118.834 139.180,100.625 C129.617,93.888 111.663,92.827 102.735,85.214 C86.062,70.995 86.544,57.694 80.574,41.376 C73.423,21.829 69.404,9.976 51.907,4.025 Z"/>
+                               </svg>
+                            </div>
+                            <div class="author-info">
+                                <div class="thumb"><img src="assets/images/resource/author-1.jpg" alt=""></div>
+                                <h4>James Thomas</h4>
+                                <div class="location">California, USA</div>
+                            </div>
+                            <div class="content">
+                                <div class="rating-info">
+                                    <h5>Best Medical Directory</h5>
+                                    <div class="rating">
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                    </div>
+                                </div>
+                                <div class="text">Dolor sitam consectetur sed adipisc  eiusmod tempor cididunt laboret do magn aliquat enim sed.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 testimonial-block">
+                        <div class="inner-box">
+                            <div class="shape">
+                                <svg 
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="162px" height="162px">
+                               <path fill-rule="evenodd"  fill="rgb(233, 245, 250)"
+                                d="M51.907,4.025 C4.744,-12.017 -4.034,30.812 3.061,42.932 C13.643,61.007 32.866,50.344 47.072,67.720 C53.996,76.190 53.497,84.812 59.956,103.148 C63.142,112.195 72.317,125.968 88.600,128.832 C107.082,132.083 115.911,127.220 127.941,135.094 C142.748,144.787 134.937,160.333 142.655,161.040 C148.709,161.596 161.984,153.268 161.302,139.151 C161.105,135.085 165.023,118.834 139.180,100.625 C129.617,93.888 111.663,92.827 102.735,85.214 C86.062,70.995 86.544,57.694 80.574,41.376 C73.423,21.829 69.404,9.976 51.907,4.025 Z"/>
+                               </svg>
+                            </div>
+                            <div class="author-info">
+                                <div class="thumb"><img src="assets/images/resource/author-2.jpg" alt=""></div>
+                                <h4>Tanya Benson</h4>
+                                <div class="location">California, USA</div>
+                            </div>
+                            <div class="content">
+                                <div class="rating-info">
+                                    <h5>Best Medical Directory</h5>
+                                    <div class="rating">
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                    </div>
+                                </div>
+                                <div class="text">Dolor sitam consectetur sed adipisc  eiusmod tempor cididunt laboret do magn aliquat enim sed.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 testimonial-block">
+                        <div class="inner-box">
+                            <div class="shape">
+                                <svg 
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="162px" height="162px">
+                               <path fill-rule="evenodd"  fill="rgb(233, 245, 250)"
+                                d="M51.907,4.025 C4.744,-12.017 -4.034,30.812 3.061,42.932 C13.643,61.007 32.866,50.344 47.072,67.720 C53.996,76.190 53.497,84.812 59.956,103.148 C63.142,112.195 72.317,125.968 88.600,128.832 C107.082,132.083 115.911,127.220 127.941,135.094 C142.748,144.787 134.937,160.333 142.655,161.040 C148.709,161.596 161.984,153.268 161.302,139.151 C161.105,135.085 165.023,118.834 139.180,100.625 C129.617,93.888 111.663,92.827 102.735,85.214 C86.062,70.995 86.544,57.694 80.574,41.376 C73.423,21.829 69.404,9.976 51.907,4.025 Z"/>
+                               </svg>
+                            </div>
+                            <div class="author-info">
+                                <div class="thumb"><img src="assets/images/resource/author-1.jpg" alt=""></div>
+                                <h4>James Thomas</h4>
+                                <div class="location">California, USA</div>
+                            </div>
+                            <div class="content">
+                                <div class="rating-info">
+                                    <h5>Best Medical Directory</h5>
+                                    <div class="rating">
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                    </div>
+                                </div>
+                                <div class="text">Dolor sitam consectetur sed adipisc  eiusmod tempor cididunt laboret do magn aliquat enim sed.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 testimonial-block">
+                        <div class="inner-box">
+                            <div class="shape">
+                                <svg 
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="162px" height="162px">
+                               <path fill-rule="evenodd"  fill="rgb(233, 245, 250)"
+                                d="M51.907,4.025 C4.744,-12.017 -4.034,30.812 3.061,42.932 C13.643,61.007 32.866,50.344 47.072,67.720 C53.996,76.190 53.497,84.812 59.956,103.148 C63.142,112.195 72.317,125.968 88.600,128.832 C107.082,132.083 115.911,127.220 127.941,135.094 C142.748,144.787 134.937,160.333 142.655,161.040 C148.709,161.596 161.984,153.268 161.302,139.151 C161.105,135.085 165.023,118.834 139.180,100.625 C129.617,93.888 111.663,92.827 102.735,85.214 C86.062,70.995 86.544,57.694 80.574,41.376 C73.423,21.829 69.404,9.976 51.907,4.025 Z"/>
+                               </svg>
+                            </div>
+                            <div class="author-info">
+                                <div class="thumb"><img src="assets/images/resource/author-2.jpg" alt=""></div>
+                                <h4>Tanya Benson</h4>
+                                <div class="location">California, USA</div>
+                            </div>
+                            <div class="content">
+                                <div class="rating-info">
+                                    <h5>Best Medical Directory</h5>
+                                    <div class="rating">
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                    </div>
+                                </div>
+                                <div class="text">Dolor sitam consectetur sed adipisc  eiusmod tempor cididunt laboret do magn aliquat enim sed.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 testimonial-block">
+                        <div class="inner-box">
+                            <div class="shape">
+                                <svg 
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="162px" height="162px">
+                               <path fill-rule="evenodd"  fill="rgb(233, 245, 250)"
+                                d="M51.907,4.025 C4.744,-12.017 -4.034,30.812 3.061,42.932 C13.643,61.007 32.866,50.344 47.072,67.720 C53.996,76.190 53.497,84.812 59.956,103.148 C63.142,112.195 72.317,125.968 88.600,128.832 C107.082,132.083 115.911,127.220 127.941,135.094 C142.748,144.787 134.937,160.333 142.655,161.040 C148.709,161.596 161.984,153.268 161.302,139.151 C161.105,135.085 165.023,118.834 139.180,100.625 C129.617,93.888 111.663,92.827 102.735,85.214 C86.062,70.995 86.544,57.694 80.574,41.376 C73.423,21.829 69.404,9.976 51.907,4.025 Z"/>
+                               </svg>
+                            </div>
+                            <div class="author-info">
+                                <div class="thumb"><img src="assets/images/resource/author-1.jpg" alt=""></div>
+                                <h4>James Thomas</h4>
+                                <div class="location">California, USA</div>
+                            </div>
+                            <div class="content">
+                                <div class="rating-info">
+                                    <h5>Best Medical Directory</h5>
+                                    <div class="rating">
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                    </div>
+                                </div>
+                                <div class="text">Dolor sitam consectetur sed adipisc  eiusmod tempor cididunt laboret do magn aliquat enim sed.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 testimonial-block">
+                        <div class="inner-box">
+                            <div class="shape">
+                                <svg 
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="162px" height="162px">
+                               <path fill-rule="evenodd"  fill="rgb(233, 245, 250)"
+                                d="M51.907,4.025 C4.744,-12.017 -4.034,30.812 3.061,42.932 C13.643,61.007 32.866,50.344 47.072,67.720 C53.996,76.190 53.497,84.812 59.956,103.148 C63.142,112.195 72.317,125.968 88.600,128.832 C107.082,132.083 115.911,127.220 127.941,135.094 C142.748,144.787 134.937,160.333 142.655,161.040 C148.709,161.596 161.984,153.268 161.302,139.151 C161.105,135.085 165.023,118.834 139.180,100.625 C129.617,93.888 111.663,92.827 102.735,85.214 C86.062,70.995 86.544,57.694 80.574,41.376 C73.423,21.829 69.404,9.976 51.907,4.025 Z"/>
+                               </svg>
+                            </div>
+                            <div class="author-info">
+                                <div class="thumb"><img src="assets/images/resource/author-2.jpg" alt=""></div>
+                                <h4>Tanya Benson</h4>
+                                <div class="location">California, USA</div>
+                            </div>
+                            <div class="content">
+                                <div class="rating-info">
+                                    <h5>Best Medical Directory</h5>
+                                    <div class="rating">
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                    </div>
+                                </div>
+                                <div class="text">Dolor sitam consectetur sed adipisc  eiusmod tempor cididunt laboret do magn aliquat enim sed.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 testimonial-block">
+                        <div class="inner-box">
+                            <div class="shape">
+                                <svg 
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="162px" height="162px">
+                               <path fill-rule="evenodd"  fill="rgb(233, 245, 250)"
+                                d="M51.907,4.025 C4.744,-12.017 -4.034,30.812 3.061,42.932 C13.643,61.007 32.866,50.344 47.072,67.720 C53.996,76.190 53.497,84.812 59.956,103.148 C63.142,112.195 72.317,125.968 88.600,128.832 C107.082,132.083 115.911,127.220 127.941,135.094 C142.748,144.787 134.937,160.333 142.655,161.040 C148.709,161.596 161.984,153.268 161.302,139.151 C161.105,135.085 165.023,118.834 139.180,100.625 C129.617,93.888 111.663,92.827 102.735,85.214 C86.062,70.995 86.544,57.694 80.574,41.376 C73.423,21.829 69.404,9.976 51.907,4.025 Z"/>
+                               </svg>
+                            </div>
+                            <div class="author-info">
+                                <div class="thumb"><img src="assets/images/resource/author-1.jpg" alt=""></div>
+                                <h4>James Thomas</h4>
+                                <div class="location">California, USA</div>
+                            </div>
+                            <div class="content">
+                                <div class="rating-info">
+                                    <h5>Best Medical Directory</h5>
+                                    <div class="rating">
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                    </div>
+                                </div>
+                                <div class="text">Dolor sitam consectetur sed adipisc  eiusmod tempor cididunt laboret do magn aliquat enim sed.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 testimonial-block">
+                        <div class="inner-box">
+                            <div class="shape">
+                                <svg 
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="162px" height="162px">
+                               <path fill-rule="evenodd"  fill="rgb(233, 245, 250)"
+                                d="M51.907,4.025 C4.744,-12.017 -4.034,30.812 3.061,42.932 C13.643,61.007 32.866,50.344 47.072,67.720 C53.996,76.190 53.497,84.812 59.956,103.148 C63.142,112.195 72.317,125.968 88.600,128.832 C107.082,132.083 115.911,127.220 127.941,135.094 C142.748,144.787 134.937,160.333 142.655,161.040 C148.709,161.596 161.984,153.268 161.302,139.151 C161.105,135.085 165.023,118.834 139.180,100.625 C129.617,93.888 111.663,92.827 102.735,85.214 C86.062,70.995 86.544,57.694 80.574,41.376 C73.423,21.829 69.404,9.976 51.907,4.025 Z"/>
+                               </svg>
+                            </div>
+                            <div class="author-info">
+                                <div class="thumb"><img src="assets/images/resource/author-2.jpg" alt=""></div>
+                                <h4>Tanya Benson</h4>
+                                <div class="location">California, USA</div>
+                            </div>
+                            <div class="content">
+                                <div class="rating-info">
+                                    <h5>Best Medical Directory</h5>
+                                    <div class="rating">
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                        <span class="fas fa-star"></span>
+                                    </div>
+                                </div>
+                                <div class="text">Dolor sitam consectetur sed adipisc  eiusmod tempor cididunt laboret do magn aliquat enim sed.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                    
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section style-two">
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="content">
+                        <div class="icon"><span class="icon-envelope"></span></div>
+                        <h3>Newsletter Subscribe </h3>
+                        <div class="text">Urgent 24/7 Medical Directory Services</div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="newsletter-form">
+                        <form class="ajax-sub-form" method="post">
+                            <div class="form-group">
+                                <input type="email" placeholder="Enter Your Email Address..." id="subscription-email">
+                                <button type="submit" class="theme-btn"><span>Subscribe <i class="icon-arrow-right"></i></span></button>
+                                <label class="subscription-label" for="subscription-email"></label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Main Footer-->
+    <footer class="main-footer">
+        <div class="shape-one"><img src="assets/images/shape/shape-7.png" alt=""></div>
+        <div class="upper-box">
+            <div class="auto-container">
+                <!--Widgets Section-->
+                <div class="widgets-section">
+                    <div class="row clearfix">
+                        
+                        <!--Column-->
+                        <div class="column col-lg-3 col-md-6">
+                            <div class="widget about-widget">
+                                <div class="logo"><a href="index.html"><img src="assets/images/logo.png" alt=""></a></div>
+                                <div class="text">Integer lobortis sem consequt imperd
+                                    In nulla viverra ut lorem ut dapibus con
+                                    etur diam. Nun biend yums.</div>
+                                <ul class="social-links">
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!--Column-->
+                        <div class="column col-lg-3 col-md-6">
+                            <div class="widget links-widget">
+                                <h3 class="widget-title">About Us</h3>
+                                <div class="widget-content">
+                                    <ul>
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Listing</a></li>
+                                        <li><a href="#">How It Works</a></li>
+                                        <li><a href="#">What We Offer</a></li>
+                                        <li><a href="#">Latest News</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                    </ul>                                        
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!--Column-->
+                        <div class="column col-lg-3 col-md-6">
+                            <div class="widget links-widget">
+                                <h3 class="widget-title">Quick Links</h3>
+                                <div class="widget-content">
+                                    <ul>
+                                        <li><a href="#">Medical Directory</a></li>
+                                        <li><a href="#">Press Release</a></li>
+                                        <li><a href="#">Top Doctors</a></li>
+                                        <li><a href="#">Featured Hospitals</a></li>
+                                        <li><a href="#">Download App</a></li>
+                                        <li><a href="#">First Aid Facility</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!--Column-->
+                        <div class="column col-lg-3 col-md-6">
+                            <div class="widget contact-widget">
+                                <h3 class="widget-title">Contact Us</h3>
+                                <div class="widget-content">
+                                    <ul class="contact-info">
+                                        <li>
+                                            <div class="icon"><span class="fas fa-flag"></span></div>
+                                            <div class="text">72 Main Drive, Calibry, <br> Florida 20304</div>
+                                        </li>
+                                        <li>
+                                            <div class="icon"><span class="fas fa-phone-volume"></span></div>
+                                            <div class="text">
+                                                Helpline 24/7 <br>
+                                                <a href="tel:+1(700)3330088">+1 (700) 333 0088</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon"><span class="fas fa-clock"></span></div>
+                                            <div class="text">
+                                                Mon to Friday <br> 9:00 am to 7:00 pm
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="auto-container">
+                <div class="copyright-text">(c) 2021 - Doclik Medical Directory. All rights reserved. By <a href="http://www.bootstrapmb.com/">bootstrapmb</a></div>
+            </div>
+        </div>               
+    </footer>
+    <!--End Main Footer-->
+
+    
+	
+</div>
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon-arrow-left"></span></div>
+
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/jquery.fancybox.js"></script>
+<script src="assets/js/isotope.js"></script>
+<script src="assets/js/owl.js"></script>
+<script src="assets/js/appear.js"></script>
+<script src="assets/js/wow.js"></script>
+<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/js/TweenMax.min.js"></script>
+<script src="assets/js/swiper.min.js"></script>
+<script src="assets/js/jquery.ajaxchimp.min.js"></script>
+<script src="assets/js/parallax-scroll.js"></script>
+<script src="assets/js/jquery.nice-select.min.js"></script>
+
+<script src="assets/js/script.js"></script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

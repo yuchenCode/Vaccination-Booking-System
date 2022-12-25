@@ -1,0 +1,28 @@
+{% extends "patient/base.html" %}
+
+{% block content %}
+
+<div class="box box-info" style="width: 80rem;margin-left: 40rem;">
+    <div class="page-header" style="text-align:center;">
+        <h1><strong>Vaccination Form</strong></h1>
+        <a href="{{ url_for('patient.profile') }}" class="btn btn-default ">Back to Profile</a>
+    </div>
+    <div class="box-body" style="margin-left: 30px;">
+        <h3><strong>NAME:</strong> {{ patient.fullname }}</h3>
+        <h3>PATIENT EMAIL: {{ patient.patient_email }}</h3>
+        <h3>GENDER: {{ patient.gender }}</h3>
+        <h3>AGE: {{ patient.age }}</h3>
+        <h3>PHONE NUMBER: {{ patient.phone_number }}</h3>
+        <h3><strong>VACCINE TYPE:</strong> {{ record.vaccine_type }}</h3>
+        <h3><strong>CLINIC:</strong> {{ record.clinic_name }}</h3>
+        <h3>CLINIC ADDRESS: {{ clinic.address }}</h3>
+        <h3>CLINIC EMAIL: {{ clinic.doctor_email }}</h3>
+        <h3><strong>DATE:</strong> {{ record.date.strftime("%m-%d") }}</h3>
+        <h3><strong>START TIME:</strong> {{ record.time_from.strftime("%H:%M") }}</h3>
+        <h3><strong>END TIME:</strong> {{ record.time_to.strftime("%H:%M") }}</h3>
+    </div>
+
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,59 @@
+{% extends "doctor/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Clinic appointment</h1>
+    {% if doctor.clinic_name != None %}
+        <a href="{{ url_for('doctor.appointment_create') }}" class="btn btn-primary">Create Appointment</a>
+    {% endif %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bootstrap </title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+</head>
+</html>
+
+<table class="table table-hover table-striped">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Vaccine</th>
+        <th>Date</th>
+        <th>Period</th>
+        <th>Current Appointment</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% if als %}
+        {% for a in als %}
+        <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ a.vaccine_type }}</td>
+        <td>{{ a.date.strftime("%m-%d") }}</td>
+        <td>{{ a.time_from.strftime("%H:%M") }} - {{ a.time_to.strftime("%H:%M") }}</td>
+        <td>{{ a.current_booking }}/{{ a.limit }}</td>
+        <td>
+            {% if a.current_booking != 0 %}
+                <a href="{{ url_for('doctor.appointment_view_list', appointment_id=a.id) }}" class="btn btn-primary">Viewing</a>
+            {% endif %}
+        </td>
+        <td>
+            <a href="{{ url_for('doctor.appointment_delete', appointment_id=a.id) }}" class="btn btn-danger" onclick="{if(confirm('Are you sure to delete this period?')){this.document.formname.submit();return true;}return false;}">Delete</a>
+        </td>
+        </tr>
+        {% endfor %}
+    {% else %}
+        <tr><td colspan="4" class="text-center">No Appointments yet.</td></tr>
+    {% endif %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

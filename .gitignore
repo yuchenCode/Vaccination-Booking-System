@@ -1,0 +1,14 @@
+# ignore .idea/__pycache__ folder
+
+.idea/
+__pycache__/
+
+# ignore xml/iml/pyc file
+
+*.xml
+*.iml
+*.pyc
+
+# ignore db file
+
+*.sqlite

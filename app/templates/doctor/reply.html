@@ -1,0 +1,14 @@
+{% extends "doctor/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1>Reply Message</h1>
+</div>
+
+<div class="col-md-4">
+    {{ wtf.quick_form(form) }}
+</div>
+
+{% endblock %}

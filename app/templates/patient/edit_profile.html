@@ -1,0 +1,23 @@
+{% extends "patient/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+
+<div class="page-header">
+    <h3>Edit Profile</h3>
+</div>
+
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+
+<div class="modal-body" style="margin-top: 20px">
+    {{ wtf.quick_form(form,form_type="horizontal",horizontal_columns=('lg', 4, 5)) }}
+</div>
+
+{% endblock %}

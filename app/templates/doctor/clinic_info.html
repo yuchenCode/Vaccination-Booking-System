@@ -1,0 +1,23 @@
+{% extends "doctor/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+
+
+<div class="box box-info" style="height: 85rem; " >
+
+    <div class="page-header" style="text-align:center;">
+        <h1 class="text-center"><strong>Clinic Information</strong></h1>
+        <a href="{{ url_for('doctor.edit_clinic_info') }}" class="btn btn-default">Edit Your Clinic</a>
+    </div>
+
+    <div class="container">
+        <h3><strong>CLINIC ID:</strong> {{ doctor.clinic_id }}</h3>
+        <h3><strong>CLINIC NAME:</strong> {{ doctor.clinic_name }}</h3>
+        <h3><strong>ADDRESS:</strong> {{ doctor.address }}</h3>
+        <h3><strong>PHONE NUMBER:</strong> {{ doctor.clinic_phone_number }}</h3>
+        <h3><strong>LAST LOG-IN:</strong> {{ current_user.last_seen.strftime("%m-%d %H:%M") }}</h3>
+    </div>
+
+</div>
+{% endblock %}

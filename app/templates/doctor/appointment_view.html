@@ -1,0 +1,73 @@
+{% extends "doctor/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+
+<div class="page-header">
+    <h3>Appointment Detail</h3>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bootstrap </title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+</head>
+</html>
+
+<table class="table table-hover table-striped">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Patient Fullname</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Phone Number</th>
+        <th>ID Number</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% if cls %}
+        {% for c in cls %}
+        <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ c[0].fullname }}</td>
+        <td>{{ c[0].gender }}</td>
+        <td>{{ c[0].age }}</td>
+        <td>{{ c[0].phone_number }}</td>
+        <td>{{ c[0].id_number }}</td>
+        <td>
+            <a href="{{ url_for('doctor.contact', patient_email=c[0].patient_email, appointment_id=appointment_id) }}" class="btn btn-info">Contact</a>
+        </td>
+        <td>
+            {% if c[1].status == "In Progress" %}
+                <a href="{{ url_for('doctor.appointment_approve', record_id=c[1].id) }}" class="btn btn-success" onclick="{if(confirm('Are you sure to approve this request?')){this.document.formname.submit();return true;}return false;}">Approve</a>
+                <a href="{{ url_for('doctor.appointment_reject', record_id=c[1].id) }}" class="btn btn-danger" onclick="{if(confirm('Are you sure to reject this request?')){this.document.formname.submit();return true;}return false;}">Reject</a>
+            {% endif %}
+            {% if c[1].status == "Approved" %}
+                {% if c[0].vaccination == 1 %}
+                    <a href="{{ url_for('doctor.accomplish_vaccination', appointment_id=appointment_id, record_id=c[1].id) }}" class="btn btn-success">Accomplish Vaccination</a>
+                {% endif %}
+            {% endif %}
+        </td>
+        </tr>
+        {% endfor %}
+    {% else %}
+        <tr><td colspan="4" class="text-center">No Patient yet.</td></tr>
+    {% endif %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

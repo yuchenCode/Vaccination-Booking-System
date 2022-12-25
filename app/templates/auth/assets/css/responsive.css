@@ -1,0 +1,282 @@
+@media only screen and (max-width: 7000px){
+	.page-wrapper{
+		overflow: hidden;
+	}
+	
+}
+
+@media only screen and (max-width: 1799px){
+
+}
+
+@media only screen and (max-width: 1675px){
+	.banner-section-two .side-image {
+		width: 520px;
+		background-size: contain;
+		background-position: bottom center;
+	}
+	.banner-section-two .shape-one,
+	.services-section-two .side-image,
+	.clients-logo-section .shape-two,
+	.clients-logo-section .shape-one {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 1400px){
+
+	.main-menu .navigation>li:nth-last-child(-n+3)>ul>li>ul {
+	    left: auto;
+	    right: 100%;
+	}
+	.main-menu .navigation > li:nth-last-child(-n+2) > ul {
+	    left: auto;
+	    right: 0;
+	}
+	.main-menu .navigation > li:nth-last-child(-n+2) > ul > li > ul {
+	    left: auto;
+	    right: 100%;
+	}
+	.banner-section .content-box h4:before {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 1199px){
+	.services-section .shape-one {
+		display: none;
+	}
+	.process-block .count {
+		position: relative;
+		top: 0;
+		left: 0;
+		margin-bottom: 60px;
+		line-height: 60px;
+	}
+	.process-block .inner-box {
+		margin-bottom: 50px;
+	}
+	.sticky-header .header-upper .navbar-right-info,
+	.banner-section .content-box .image,
+	.banner-section .content-box .image-two {
+		display: none;
+	}
+	.doctors-page.full-width-page .doctor-page-wrapper {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.main-menu .navigation>li {
+		margin-right: 10px;
+	}
+	.app-download-section .side-image,
+	.search-form-three .form-wrapper .box {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 1099px){
+
+}
+
+@media only screen and (min-width: 1140px){
+
+}
+
+@media only screen and (max-width: 1139px){
+	/* Default */
+	.main-header .nav-outer .main-menu,
+	.sticky-header{
+		display: none !important;
+	}
+	.nav-outer .mobile-nav-toggler{
+		display: block;
+	}
+	/*  */
+	.main-header.header-style-one {
+		top: 10px;
+	}
+	.banner-section-two .side-image {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 992px){
+	.blog-sidebar {
+		padding-left: 20px;
+	}
+}
+
+@media only screen and (max-width: 991px){
+	.about-section ul.list {
+		margin-top: 0;
+	}
+	.process-block .lik-btn {
+		position: relative;
+		top: 0;
+		right: 0;
+		margin-bottom: 30px;
+	}
+	.newsletter-form {
+		margin-left: 0;
+	}
+	.about-section.style-two .image {
+		margin-left: 0;
+		margin-bottom: 40px;
+	}
+	.about-section.style-two {
+		padding-bottom: 0;
+	}
+	.working-process-section.style-two .sec-bg {
+		bottom: -120px;
+	}
+	.search-form-two .form-group-two {
+		padding-left: 0;
+		margin-left: 0;
+		border-left: 0;
+	}	
+	.search-form-two .form-btn {
+		text-align: left;
+		position: relative;
+		top: -10px;
+		margin-bottom: 30px;
+	}
+	.doctors-section .title-content .theme-btn {
+		display: none;
+	}
+	.faq-section .sec-bg {
+		bottom: -100px;
+	}
+	.doctors-page.full-width-page .doctor-page-wrapper {
+		margin-right: 0;
+	}
+	
+}
+
+@media only screen and (min-width: 768px){
+	.main-menu .navigation > li > ul,
+	.main-menu .navigation > li > ul > li > ul{
+		display:block !important;
+		visibility:hidden;
+		opacity:0;
+	}
+}
+
+@media only screen and (max-width: 767px){	
+	br {
+		display: none;
+	}
+	.funfacts-section .shape-one,
+	.header-upper .navbar-right-info {
+		display: none;
+	}
+	.banner-section .content-box h1 {
+		font-size: 50px;
+		line-height: 60px;
+	}
+	.medical-directory-section {
+		padding-bottom: 20px;
+	}
+	.sec-title h2 {
+		font-size: 40px;
+	}
+	.testimonial-block .content {
+		width: 100%;
+	}
+	.search-form-three form {
+		padding-left: 0;
+	}	
+	.search-form-three h4 {
+		position: relative;
+		top: 0;
+		left: 0;
+		margin-bottom: 20px;
+	}	
+	.search-form-three input[type="search"] {
+		padding-right: 50px;
+		padding-left: 10px;
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.newsletter-form input#subscription-email {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.app-download-section .theme-btn-three,
+	.app-download-section .theme-btn-two {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.doctor-block-two .inner-box {
+		padding-left: 27px;
+	}
+	
+	.doctor-block-two .image {
+		position: relative;
+		top: 0;
+		left: 0;
+		margin-bottom: 30px;
+	}
+	
+	.doctor-block-two .image img {
+		width: auto;
+	}
+	
+	.doctors-page .item-shorting .left-column h3 {
+		margin-bottom: 20px;
+	}
+	
+	.doctor-block-two .category {
+		margin: 10px 0;
+	}
+	
+	.doctor-block-two .theme-btn {
+		margin-bottom: 10px;
+	}
+	.doctors-page.full-width-page .contact-map {
+		padding-left: 0;
+	}
+	
+	.newsletter-section .content {
+		padding-left: 0;
+	}
+	
+	.newsletter-section .content .icon {
+		position: relative;
+		margin-bottom: 20px;
+	}
+	
+	.newsletter-section .content h3 {
+		margin-bottom: 15px;
+	}
+	.blog-single-post .post-share-info .right-column {
+		width: 100%;
+	}
+	.blog-single-post .post-share-info .share-content {
+		margin-left: 0;
+	}
+	.blog-single-post .post-share-info .share-content .social-links {
+		right: auto;
+		left: 48px;
+	}
+	.comments-area .comment {
+		padding-left: 0;
+	}
+	
+	.comments-area .comment-box .author-thumb {
+		position: relative;
+	}
+	
+	.comments-area .comment-box .reply-btn {
+		position: relative;
+	}
+}
+
+
+
+
+
+
+
+
+

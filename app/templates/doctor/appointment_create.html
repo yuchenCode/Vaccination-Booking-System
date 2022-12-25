@@ -1,0 +1,37 @@
+{% extends 'doctor/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block css %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='jquery-datetime-picker/jquery.datetimepicker.min.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="modal-body" style="margin-top: 20px">
+    <h1>{{ title }}</h1>
+    <br /><br /><br />
+    {{ wtf.quick_form(form,form_type="horizontal",horizontal_columns=('lg', 4, 5)) }}
+</div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='jquery-datetime-picker/jquery.datetimepicker.full.js') }}"></script>
+    <script>
+    jQuery('#date').datetimepicker({
+            timepicker:false,
+            format:'Y-m-d',
+            lang:'en'
+        });
+    jQuery('#time_from').datetimepicker({
+            datepicker:false,
+            format:'H:i',
+            lang:'en'
+        });
+    jQuery('#time_to').datetimepicker({
+            datepicker:false,
+            format:'H:i',
+            lang:'en'
+        });
+    </script>
+{% endblock %}

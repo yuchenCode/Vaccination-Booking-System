@@ -1,0 +1,69 @@
+{% extends "patient/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+
+<div class="page-header">
+    <h1>Available Clinics</h1>
+    <h4><font color="#0000FF">Please remember to set your fullname and ID Number at the profile page</font> </h4>
+
+    <a href="{{ url_for('patient.direct') }}" class="btn btn-primary pull-left">MAP Guidance</a>
+    <div class="search">
+        <form action="/patient/appointment_clinic_list" method="POST">
+            <input type="text" class="btn" placeholder="Enter clinic name..." name="clinic">
+            <input type="submit" class="btn btn-default" value="Search">
+        </form>
+    </div>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bootstrap </title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+</head>
+</html>
+
+
+<table class="table table-hover table-striped">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Clinic</th>
+        <th>Contact</th>
+        <th>View</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% if cls %}
+        {% for c in cls %}
+        <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ c[0] }}</td>
+        <td>
+            <a href="{{ url_for('patient.contact', clinic_name=c[0]) }}" class="btn btn-info">Contact</a>
+        </td>
+        <td>
+            <a href="{{ url_for('patient.appointment_period_list', clinic_name=c[0]) }}" class="btn btn-primary">View</a>
+        </td>
+        </tr>
+        {% endfor %}
+    {% else %}
+        <tr><td colspan="4" class="text-center">No Available Clinic yet.</td></tr>
+    {% endif %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

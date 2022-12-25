@@ -1,0 +1,36 @@
+{% extends "patient/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+
+<div class="box box-info" style="height: 85rem; " >
+
+    <div class="page-header" style="text-align:center;">
+        <h1 class="text-center"><strong>Patient Profile</strong></h1>
+        <a href="{{ url_for('patient.edit_profile') }}" class="btn btn-default">Edit Your Profile</a>
+    </div>
+
+    <div class="container">
+        <h3><strong>NAME:</strong> {{ patient.fullname }}</h3>
+        <h3><strong>GENDER:</strong> {{ patient.gender }}</h3>
+        <h3><strong>AGE:</strong> {{ patient.age }}</h3>
+        <h3><strong>PHONE:</strong> {{ patient.phone_number }}</h3>
+        <h3><strong>ID NUMBER:</strong> {{ patient.id_number }}</h3>
+
+        {% if patient.vaccination == 0 %}
+            <h2 class="text-red"> Not Vaccinated
+            </h2>
+        {% endif %}
+        {% if patient.vaccination == 1 %}
+            <h2 class="text-orange"> Ready for Vaccination
+                <a href="{{ url_for('patient.form') }}" class="btn btn-flat">See My Vaccination Form</a></h2>
+        {% endif %}
+        {% if patient.vaccination == 2 %}
+            <h2 class="text-green"> Vaccination Accomplished
+                <a href="{{ url_for('patient.form') }}" class="btn btn-flat">See My Vaccination Form</a></h2>
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock %}

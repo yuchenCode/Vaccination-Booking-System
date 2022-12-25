@@ -1,0 +1,126 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+
+<div class="box">
+    <h3>Doctor_Info</h3>
+
+    <div class="container">
+        {% for message in get_flashed_messages() %}
+        <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% block page_content %}{% endblock %}
+    </div>
+
+    <table class="table table-bordered table-hover table-condensed">
+        <thead>
+        <tr>
+            <th>Clinic ID</th>
+            <th>Address</th>
+
+            <th>Clinic Name</th>
+            <th>Clinic PhoneNumber</th>
+            <th class="text-center">Modify</th>
+            <th class="text-center">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if doctor %}
+            {% for a in doctor %}
+            <tr>
+            <td>{{ a.clinic_id }}</td>
+            <td>{{ a.address }}</td>
+
+            <td>{{ a.clinic_name }}</td>
+            <td>{{ a.clinic_phone_number }}</td>
+            <td class="text-center">
+                <input type="button" class="btn btn-primary btn-raised" data-toggle="modal" data-target="#editModal" onclick="Values_id_number({{ a.clinic_id }})"value="Modify"/>
+            </td>
+            <td class="text-center">
+                <input type="button" class="btn btn-danger btn-raised" data-toggle="modal" data-target="#deleteModal" onclick="Values_id({{ a.id }})"value="Delete"/>
+            </td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr><td colspan="4" class="text-center">No doctor is visible yet.</td></tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-hidden="true">×
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        MODIFY INFO
+                    </h4>
+                </div>
+                <form name="inputUser" method="POST"  action="http://127.0.0.1:5000/admin/appointment/list_doctor">
+                     <div class="modal-body">
+                        <input type="hidden" id='clinic_id' name='clinic_id' value=" ">
+                        <p><label class="label_input">Address</label><label>
+                            <input type="text" name="address">
+                        </label></p>
+
+                        <p><label class="label_input">Clinic_Name</label><label>
+                            <input type="text" name="clinic_name">
+                        </label></p>
+                        <p><label class="label_input">Clinic_Phone_Number</label><label>
+                            <input type="text" name="clinic_phone_number">
+                        </label></p>
+                     </div>
+                     <div class="modal-footer">
+                        <input type="Submit" value="Submit" id="button">
+                     </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-hidden="true">×
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        DELETE INFO
+                    </h4>
+                </div>
+                <form name="inputUser" method="POST"  action="http://127.0.0.1:5000/admin/appointment/list_doctor">
+                     <div class="modal-body">
+                        <input type="hidden" id='id' name='id' value=" ">
+                         <h5>Are you sure that you want to execute delete action?</h5>
+                     </div>
+                     <div class="modal-footer">
+                        <input type="Submit" value="Submit" id="button">
+                     </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $("#editModal").modal("hide");
+    function Values_id_number(ID){
+        var a = $("#clinic_id").val(ID);
+        return a;
+    }
+    $("#deleteModal").modal("hide");
+    function Values_id(ID){
+        var a = $("#id").val(ID);
+        return a;
+    }
+</script>
+{%  endblock %}

@@ -1,0 +1,12 @@
+{% extends "admin/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+
+<h3>Request Limit Modification</h3>
+
+<div class="col-md-4">
+{{ wtf.quick_form(form) }}
+</div>
+
+{% endblock %}

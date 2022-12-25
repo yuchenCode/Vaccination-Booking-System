@@ -1,0 +1,61 @@
+{% extends "patient/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Appointment Status</h1>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bootstrap </title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+</head>
+</html>
+
+<table class="table table-hover table-striped">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Clinic</th>
+        <th>Vaccine</th>
+        <th>Date</th>
+        <th>Period</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% if rls %}
+        {% for r in rls %}
+        <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ r.clinic_name }}</td>
+        <td>{{ r.vaccine_type }}</td>
+        <td>{{ r.date.strftime("%m-%d") }}</td>
+        <td>{{ r.time_from.strftime("%H:%M") }} - {{ r.time_to.strftime("%H:%M") }}</td>
+        {% if r.status == "Approved" %}
+            <td><font color="#0000FF">{{ r.status }}</font></td>
+        {% endif %}
+        {% if r.status == "Rejected" %}
+            <td><font color="#FF0000">{{ r.status }}</font></td>
+        {% endif %}
+        {% if r.status == "In Progress" %}
+            <td>{{ r.status }}</td>
+        {% endif %}
+        <td>
+            <a href="{{ url_for('patient.contact', clinic_name=r.clinic_name) }}" class="btn btn-info">Contact</a>
+        </td>
+        </tr>
+        {% endfor %}
+    {% else %}
+        <tr><td colspan="4" class="text-center">No Appointment yet.</td></tr>
+    {% endif %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

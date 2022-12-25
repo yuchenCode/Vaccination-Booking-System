@@ -1,0 +1,84 @@
+{% extends "patient/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+
+<div class="page-header">
+    <h1> Feasible Clinics </h1>
+    <div class="search">
+        <form action="{{ url_for('patient.appointment_period_list', clinic_name = clinic_name) }}" method="POST">
+            <input type="time" class="btn" placeholder="Optional time..." name="start">
+            <select class="btn" name="type">
+                <option value="All">All</option>
+                <option value="Sinovac">Sinovac</option>
+                <option value="CanSino">CanSino</option>
+                <option value="Pfizer">Pfizer</option>
+                <option value="Moderna">Moderna</option>
+            </select>
+            <input type="submit" class="btn btn-default" value="Search">
+        </form>
+    </div>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bootstrap </title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+</head>
+</html>
+
+
+<table class="table table-hover table-striped">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Vaccine</th>
+        <th>Date</th>
+        <th>Period</th>
+        <th>Current Appointment</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% if als %}
+        {% for a in als %}
+        <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ a.vaccine_type }}</td>
+        <td>{{ a.date.strftime("%m-%d") }}</td>
+        <td>{{ a.time_from.strftime("%H:%M") }} - {{ a.time_to.strftime("%H:%M") }}</td>
+        <td>{{ a.current_booking }}/{{ a.limit }}</td>
+        <td>
+            {% if a.current_booking < a.limit %}
+                {% if patient.fullname != None %}
+                    {% if patient.booking < admin.request_limit %}
+                        {% if patient.vaccination == 0 %}
+                            {% if a.id not in idlist %}
+                                <a href="{{ url_for('patient.booking', appointment_id=a.id) }}" class="btn btn-primary" onclick="{if(confirm('Are you sure to book this period?')){this.document.formname.submit();return true;}return false;}">Booking</a>
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        </td>
+        </tr>
+        {% endfor %}
+    {% else %}
+        <tr><td colspan="4" class="text-center">No Appointments yet.</td></tr>
+    {% endif %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

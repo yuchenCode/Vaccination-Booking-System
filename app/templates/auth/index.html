@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Booking System - Home{% endblock %}
+{% block page_content %}
+
+<h1 class="font-weight-bold">Welcome to the Vaccine Booking System !</h1>
+<p class="font-weight-light">Hope you can get a satisfactory experience !</p>
+
+
+<div class="page-header">
+    {% if current_user.is_authenticated %}
+    <a href="{{ url_for('auth.continue_work') }}" class="btn btn-primary">Continue to work...</a>
+
+    {% endif %}
+</div>
+{% endblock %}
+
